@@ -1,6 +1,6 @@
 # E-Commerce Website
 
-This project is an eCommerce website built using React and TypeScript. The website uses the [Fake Store API](https://fakestoreapi.com/products) to fetch product data, and includes features such as a cart page, a wishlist page, and a modal for viewing full product descriptions.
+This project is an eCommerce website built using React and TypeScript. The website uses the API to fetch product data, and includes features such as a cart page, a wishlist page, and a modal for viewing full product descriptions.
 
 ## Tech Stack
 
@@ -16,7 +16,7 @@ This project is an eCommerce website built using React and TypeScript. The websi
 
 ## Features
 
-- **Product Listing**: Display products fetched from the [Fake Store API](https://fakestoreapi.com/products).
+- **Product Listing**: Display products fetched from the API.
 - **Product Details Modal**: View full description and details of a product in a modal.
 - **Add to Cart**: Add products to the cart and manage cart items.
 - **Wishlist**: Add products to a wishlist for future reference.

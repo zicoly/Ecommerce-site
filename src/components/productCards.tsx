@@ -29,11 +29,11 @@ function ProductCards() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <p className='text-xl text-center my-5'>Loading...</p>;
   }
 
   if (error) {
-    return <div className='text-red-500 mx-auto my-5'>Error: {error}</div>;
+    return <p className='text-xl text-red-500 text-center my-5'>Error: {error}</p>;
   }
 
   return (
