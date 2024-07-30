@@ -31,7 +31,7 @@ function Hero() {
           loop
           className="absolute inset-0 w-full h-[1400px] object-cover opacity-90"
         >
-          <source src="/Fashion.mp4" type="video/mp4" />
+          <source src="/video/Fashion.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="relative flex items-center justify-center mt-20 h-full bg-gradient-to-t from-black to-transparent text-white text-center p-4">

@@ -12,8 +12,14 @@ export interface Product {
 }
 
 export const fetchProducts = async (): Promise<Product[]> => {
+  const apiUrl = process.env.REACT_APP_API_URL;
+
+  if (!apiUrl) {
+    throw new Error('API URL is not defined');
+  }
+
   try {
-    const response = await fetch('https://fakestoreapi.com/products');
+    const response = await fetch(apiUrl);
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
