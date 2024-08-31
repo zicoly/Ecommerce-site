@@ -41,7 +41,7 @@ function Hero() {
                 fontFamily: "'Courier New', Courier, monospace",
                 animation: 'slideAndFade 3s ease-out',
               }}
-              className="md:text-6xl text-4xl font-bold mb-4 opacity-50"
+              className="md:text-6xl text-3xl font-bold md:mb-4 mb-2 opacity-50 whitespace-nowrap"
             >
               Discover Your Style
             </h1>
@@ -50,7 +50,7 @@ function Hero() {
                 fontFamily: "'Courier New', Courier, monospace",
                 animation: 'slideAndFade 4s ease-out',
               }}
-              className="md:text-4xl text-xl opacity-50"
+              className="md:text-4xl text-lg opacity-50"
             >
               Explore the Latest Trends in Fashion and Electronics.
             </p>
@@ -62,51 +62,51 @@ function Hero() {
         <div className="flex items-center space-x-4 px-8 md:px-12 border-r border-[#dbdbdb]">
           <FaTruck className="text-4xl md:text-5xl text-[#ffac53]" />
           <div className="text">
-            <span className="font-bold text-[#1e1e26] text-sm md:text-base uppercase">
+            <span className="font-bold text-[#1e1e26] text-[13px] md:text-base uppercase whitespace-nowrap">
               Free delivery
             </span>
             <br />
-            <span className="text-xs md:text-base">From $49.99</span>
+            <span className="text-xs md:text-base hidden md:block">From $49.99</span>
           </div>
         </div>
         <div className="flex items-center space-x-4 px-8 md:px-12 border-r border-[#dbdbdb]">
           <FaUsers className="text-4xl md:text-5xl text-[#ffac53]" />
           <div className="text">
-            <span className="font-bold text-[#1e1e26] text-sm md:text-base uppercase">
+            <span className="font-bold text-[#1e1e26] text-[13px] md:text-base uppercase whitespace-nowrap">
               Support 24/7
             </span>
             <br />
-            <span className="text-xs md:text-base">Online 24 Hours</span>
+            <span className="text-xs md:text-base hidden md:block">Online 24 Hours</span>
           </div>
         </div>
         <div className="flex items-center space-x-4 px-8 md:px-12 border-r border-[#dbdbdb]">
           <FaUndo className="text-4xl md:text-5xl text-[#ffac53]" />
           <div className="text">
-            <span className="font-bold text-[#1e1e26] text-sm md:text-base uppercase">
+            <span className="font-bold text-[#1e1e26] text-[13px] md:text-base uppercase whitespace-nowrap">
               Free return
             </span>
             <br />
-            <span className="text-xs md:text-base">365 A Day</span>
+            <span className="text-xs md:text-base hidden md:block">365 A Day</span>
           </div>
         </div>
         <div className="flex items-center space-x-4 px-8 md:px-12 border-r border-[#dbdbdb]">
           <FaCreditCard className="text-4xl md:text-5xl text-[#ffac53]" />
           <div className="text">
-            <span className="font-bold text-[#1e1e26] text-sm md:text-base uppercase">
+            <span className="font-bold text-[#1e1e26] text-[13px] md:text-base uppercase whitespace-nowrap">
               Payment Method
             </span>
             <br />
-            <span className="text-xs md:text-base">Secure Payment</span>
+            <span className="text-xs md:text-base hidden md:block">Secure Payment</span>
           </div>
         </div>
         <div className="flex items-center space-x-4 px-8">
           <FaWallet className="text-4xl md:text-5xl text-[#ffac53]" />
           <div className="text last-child">
-            <span className="font-bold text-[#1e1e26] text-sm md:text-base uppercase">
+            <span className="font-bold text-[#1e1e26] text-[13px] md:text-base uppercase whitespace-nowrap">
               Big saving
             </span>
             <br />
-            <span className="text-xs md:text-base">Weekend Sales</span>
+            <span className="text-xs md:text-base hidden md:block">Weekend Sales</span>
           </div>
         </div>
       </div>
