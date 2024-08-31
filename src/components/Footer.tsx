@@ -15,7 +15,7 @@ function Footer() {
         <div className="flex flex-wrap justify-between">
           <style>{fontFamily}</style>
           <div className="w-full md:w-1/4 mb-6 md:mb-0">
-            <h2 className="text-lg font-bold mb-4 font-[cursive]">LOVEFEM</h2>
+            <h2 className="text-lg font-bold mb-4 font-[cursive]">Zicoly</h2>
             <p className="w-64">
               Empowering self-expression and embracing diversity. Join us on a
               journey where every purchase makes a positive impact. Together,
@@ -29,7 +29,7 @@ function Footer() {
                 <a className="cursor-pointer hover:underline">Men's clothing</a>
               </li>
               <li className="md:mb-4 mb-2">
-                <a className="cursor-pointer hover:underline">Jewelry</a>
+                <a className="cursor-pointer hover:underline">jewelery</a>
               </li>
               <li className="md:mb-4 mb-2">
                 <a className="cursor-pointer hover:underline">Electronics</a>

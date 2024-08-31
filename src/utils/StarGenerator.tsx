@@ -1,9 +1,6 @@
 import React from 'react';
 import { IoMdStar, IoMdStarHalf, IoMdStarOutline } from "react-icons/io";
-
-interface StarGeneratorProps {
-  rating: number;
-}
+import { StarGeneratorProps } from './types';
 
 const StarGenerator: React.FC<StarGeneratorProps> = ({ rating }) => {
   const fullStars = Math.floor(rating);

@@ -10,11 +10,14 @@ import {
   FaTv,
   FaFemale,
 } from 'react-icons/fa';
+import { HeaderProps } from '../utils/types';
+import { GiTwirlyFlower } from 'react-icons/gi';
+import { Link } from 'react-router-dom';
 
-import { GiTwirlyFlower } from "react-icons/gi";
-
-function Header() {
+function Header({ onCategorySelect, onSearch, cartCount }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState('All categories');
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,6 +40,27 @@ function Header() {
     };
   }, []);
 
+  const handleCategoryChange = (e: { target: { value: any } }) => {
+    const selected = e.target.value;
+    setSelectedCategory(selected);
+    onCategorySelect(selected);
+
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth',
+    });
+  };
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+    onSearch(e.target.value);
+
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <header
       id="header"
@@ -44,7 +68,7 @@ function Header() {
     >
       <div
         id="top-bar"
-        className="text-center bg-[#1e1e26] text-white uppercase h-9 font-semibold text-lg transition-all duration-300 ease-in-out"
+        className="text-center bg-[#050507] text-white uppercase h-9 font-semibold text-lg transition-all duration-300 ease-in-out"
       >
         <span>E-Store</span>
       </div>
@@ -56,16 +80,20 @@ function Header() {
             </button>
           </div>
           <div className="text-2xl md:text-3xl font-bold font-[cursive] uppercase flex items-center">
-            Lovefem
-            <GiTwirlyFlower className='ml-2 text-orange-700'/>
+            Zicoly
+            <GiTwirlyFlower className="ml-2 text-orange-700" />
           </div>
 
           <div className="hidden md:block mx-auto space-x-4 w-[45%]">
             <div className="flex items-center bg-white text-black rounded-full px-2 py-1 w-full md:w-full">
-              <select className="bg-white text-black rounded-l-full md:px-4 py-2 outline-none border-r border-gray-500">
+              <select
+                className="bg-white text-black rounded-l-full md:px-4 py-2 outline-none border-r border-gray-500"
+                value={selectedCategory}
+                onChange={handleCategoryChange}
+              >
                 <option>All categories</option>
                 <option>Men's clothing</option>
-                <option>Jewelry</option>
+                <option>jewelery</option>
                 <option>Electronics</option>
                 <option>Women's clothing</option>
               </select>
@@ -73,10 +101,9 @@ function Header() {
                 type="text"
                 placeholder="Search here"
                 className="flex-grow px-4 py-2 outline-offset-1 outline-[#f4cb9f] rounded-[8px]"
+                value={searchQuery}
+                onChange={handleSearchChange}
               />
-              <button className="bg-black text-white rounded-r-full px-4 py-2">
-                Search
-              </button>
             </div>
           </div>
 
@@ -87,23 +114,29 @@ function Header() {
                 Your Wishlist
               </span>
             </div>
-            <div className="relative cursor-pointer flex flex-col items-center">
-              <FaShoppingCart className="md:text-xl text-2xl" />
-              <span className="md:block hidden text-sm md:text-base font-medium text-[#1e1e26]">
-                Your Cart
-              </span>
-              <span className="bg-red-500 text-white rounded-full text-xs absolute -top-2 md:right-3 -right-2 w-4 h-4 text-center">
-                2
-              </span>
-            </div>
+            <Link to="/cart">
+              <div className="relative cursor-pointer flex flex-col items-center">
+                <FaShoppingCart className="md:text-xl text-2xl" />
+                <span className="md:block hidden text-sm md:text-base font-medium text-[#1e1e26]">
+                  Your Cart
+                </span>
+                <span className="bg-red-500 text-white rounded-full text-xs absolute -top-2 md:right-3 -right-2 w-4 h-4 text-center">
+                  {cartCount}
+                </span>
+              </div>
+            </Link>
           </div>
         </div>
         <div className="md:hidden flex items-center justify-around space-x-4 w-full md:w-auto">
           <div className="hidden md:flex items-center bg-white text-black rounded-full px-2 py-1 w-full md:w-auto">
-            <select className="bg-white text-black rounded-l-full px-4 py-2 outline-none border-r border-gray-500">
+            <select
+              className="bg-white text-black rounded-l-full px-4 py-2 outline-none border-r border-gray-500"
+              value={selectedCategory}
+              onChange={handleCategoryChange}
+            >
               <option>All categories</option>
               <option>Men's clothing</option>
-              <option>Jewelry</option>
+              <option>jewelery</option>
               <option>Electronics</option>
               <option>Women's clothing</option>
             </select>
@@ -112,11 +145,10 @@ function Header() {
             <input
               type="text"
               placeholder="Search here"
-              className="flex-grow px-4 py-2 outline-offset-1 outline-[#f4cb9f] rounded-l-full md:rounded-none"
+              className="flex-grow px-4 py-2 outline-offset-1 outline-[#f4cb9f] rounded-[8px]"
+              value={searchQuery}
+              onChange={handleSearchChange}
             />
-            <button className="bg-black text-white rounded-r-full px-4 py-2">
-              Search
-            </button>
           </div>
         </div>
       </div>
@@ -128,8 +160,8 @@ function Header() {
                 <FaTimes />
               </button>
               <div className="text-2xl font-bold uppercase font-[cursive] ml-6 flex items-center">
-                Lovefem
-                <GiTwirlyFlower className='ml-2 text-orange-700'/>
+                Zicoly
+                <GiTwirlyFlower className="ml-2 text-orange-700" />
               </div>
             </div>
             <h2 className="text-xs font-semibold mb-2 border-t border-white pt-2">
@@ -146,7 +178,7 @@ function Header() {
               </li>
               <li className="flex items-center space-x-4 cursor-pointer">
                 <FaGem />
-                <span>Jewelry</span>
+                <span>jewelery</span>
               </li>
               <li className="flex items-center space-x-4 cursor-pointer">
                 <FaTv />
